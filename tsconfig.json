@@ -27,14 +27,9 @@
     "declaration": true,
     "baseUrl": ".",
     "paths": {
-      "@core/*": [ "src/core/*" ],
-      "@modules/*": [ "src/modules/*" ],
-      "@express/*": [ "src/express/*" ],
-      "@__tests__/*": ["__tests__/*"]
     },
     "typeRoots": [
-      "./node_modules/@types",
-      "./src/types/index.d.ts"
+      "./node_modules/@types"
     ]
   },
   "include": [
