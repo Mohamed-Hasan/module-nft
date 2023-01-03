@@ -16,7 +16,7 @@ async function bootstrap() {
       transformOptions: { enableImplicitConversion: true, exposeDefaultValues: true },
     }),
   );
-  app.setGlobalPrefix('/nft');
+  app.setGlobalPrefix('/module-nft');
   app.enableVersioning({ type: VersioningType.URI });
   setupSwagger(app);
   await app
@@ -36,7 +36,7 @@ async function bootstrap() {
 bootstrap();
 
 function setupSwagger(app: INestApplication) {
-  const options = new DocumentBuilder().setTitle('NFT Statistics').setVersion('1.0').addTag('NFT').setBasePath('/nft').build();
+  const options = new DocumentBuilder().setTitle('NFT Statistics').setVersion('1.0').addTag('NFT').build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
 }

@@ -10,6 +10,10 @@
 ```bash
 $ yarn
 ```
+## Setup Configurations
+- create a `.env` file
+- add all necessary configurations to it
+- You must add this env variable of alchemy api key to enable integration with alchemy platform that fetches data `ALKHEMY_API_KEY` 
 
 ## Running the app
 
@@ -24,6 +28,10 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Application Links
+- Base URL: http://{appUrl}:{port}/module-nft/       ex     ==> http://localhost:3000/module-nft
+- Swagger Explorer: http://{appUrl}:{port}/api       ex     ==> http://localhost:3000/api
+- Swagger File: http://{appUrl}:{port}/api-json      ex     ==> http://localhost:3000/api-json
 ## Test
 
 ```bash
