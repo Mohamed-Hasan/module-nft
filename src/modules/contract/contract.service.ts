@@ -1,10 +1,22 @@
 import { Injectable } from '@nestjs/common';
 import { ListContractsCommonOwnersRequestQueryDto } from './dto/list-contracts-common-owners-request.dto';
+import { ContractDataSource } from './contract.datasource';
+import { getIntersectionBetweenArrays } from '../../utils/helpers';
 
 @Injectable()
 export class ContractService {
+  constructor(private readonly contractDataSource: ContractDataSource) {}
+
+  getOwnersForContract(contractAddress: string): Promise<string[]> {
+    return this.contractDataSource.getOwnersForContract(contractAddress);
+  }
+
   async listContractsCommonOwners(params: ListContractsCommonOwnersRequestQueryDto) {
     const { contractAddresses } = params;
-    return ['0x3b0c3da5da1041400ce8917b698a0fb83a0b4467', '0x3b0c3da5da1041400ce8917b698a0fb83a0b4468'];
+    const ownersPromises = contractAddresses.map((contractAddress) => {
+      return this.getOwnersForContract(contractAddress);
+    });
+    const owners = await Promise.all(ownersPromises);
+    return getIntersectionBetweenArrays(owners);
   }
 }
