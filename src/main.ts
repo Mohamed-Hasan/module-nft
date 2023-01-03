@@ -1,13 +1,16 @@
-import { Logger } from '@nestjs/common';
+import { Logger, VersioningType } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { config } from './core/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.setGlobalPrefix('/nft');
+  app.enableVersioning({ type: VersioningType.URI });
   await app
-    .listen(3000)
+    .listen(config.port)
     .then(async () => {
-      Logger.log(`started listening on port ${3000} \n`);
+      Logger.log(`started listening on port ${config.port} \n`);
       Logger.log(`Application is running on: ${await app.getUrl()}`);
     })
     .catch((err) => {
