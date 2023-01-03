@@ -3,6 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { config } from './core/config';
 import { AppModule } from './app.module';
+import './core/alchemy-sdk';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
