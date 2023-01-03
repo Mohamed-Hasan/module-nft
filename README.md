@@ -2,7 +2,7 @@
 
 ## Description
 
-- It is a module that is used to retrieve some information about NFT from Etherium Network 
+- It is a module that is used to retrieve some information about NFT from Ethereum Network 
 - This module is powered by [NestJs](https://nestjs.com/) framework
 
 ## Installation
