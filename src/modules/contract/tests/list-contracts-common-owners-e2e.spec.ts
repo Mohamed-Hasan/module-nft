@@ -28,7 +28,6 @@ describe('Contract Controller', () => {
       const contractAddress = mockedContractAddreses[0];
       const expectedOwners = mockedContractOwners[contractAddress];
       const { data, status } = await contractController.listContractsCommonOwners({ contractAddresses: [contractAddress] });
-      console.log(data);
       expect(status).toBe('ok');
       expect(data).toEqual(expectedOwners);
     });
