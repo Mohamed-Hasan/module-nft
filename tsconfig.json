@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "allowJs": true,
+    "checkJs": true,
+    "strict": false,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "declarationDir": "./dist",
+    "declaration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@core/*": [ "src/core/*" ],
+      "@modules/*": [ "src/modules/*" ],
+      "@express/*": [ "src/express/*" ],
+      "@__tests__/*": ["__tests__/*"]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types/index.d.ts"
+    ]
+  },
+  "include": [
+    "src",
+    "test",
+],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
+}
