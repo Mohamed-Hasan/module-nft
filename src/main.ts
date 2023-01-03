@@ -4,9 +4,11 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { config } from './core/config';
 import { AppModule } from './app.module';
 import './core/alchemy-sdk';
+import { ExceptionsFilter } from './utils/ExceptionFilter.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.useGlobalFilters(new ExceptionsFilter());
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
